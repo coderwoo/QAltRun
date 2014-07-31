@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
     Tray tray;
     tray.show();
 
-//    RunDlg w;
-//    w.show();
+    RunDlg w;
+    w.show();
 
     QxtGlobalShortcut* shortcut = new QxtGlobalShortcut(QKeySequence("Alt+t"), &w);
     QObject::connect(shortcut, SIGNAL(activated()), &w, SLOT(show()));
