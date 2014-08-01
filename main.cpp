@@ -1,6 +1,5 @@
 #include "RunDlg.h"
 #include <QApplication>
-#include "ShortCut.h"
 #include "Tray.h"
 #include "3rdparty/qxtglobalshortcut.h"
 int main(int argc, char *argv[])
@@ -16,7 +15,5 @@ int main(int argc, char *argv[])
     QxtGlobalShortcut* shortcut = new QxtGlobalShortcut(QKeySequence("Alt+t"), &w);
     QObject::connect(shortcut, SIGNAL(activated()), &w, SLOT(show()));
 
-    ShortCutVec vec;
-    vec.loadItems("a.txt");
     return a.exec();
 }

@@ -11,12 +11,13 @@ public:
 
 Q_SIGNALS:
     void commandSelect(int key);
+    void focusIn();
 
 public slots:
 protected:
     void keyReleaseEvent(QKeyEvent *ev);
     void keyPressEvent(QKeyEvent *ev);
-
+    void focusInEvent(QFocusEvent *ev);
 };
 
 #endif // CMDLINEEDIT_H

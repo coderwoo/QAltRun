@@ -15,7 +15,6 @@ CONFIG += c++11
 
 SOURCES += main.cpp\
         RunDlg.cpp \
-    ShortCut.cpp \
     Tray.cpp \
     3rdparty/qxtglobal.cpp \
 	3rdparty/qxtglobalshortcut.cpp \
@@ -35,7 +34,6 @@ unix {
 	SOURCES += 3rdparty/qxtglobalshortcut_x11.cpp
 }
 HEADERS  += RunDlg.h \
-    ShortCut.h \
     Tray.h \
     3rdparty/qxtglobal.h \
     3rdparty/qxtglobalshortcut.h \

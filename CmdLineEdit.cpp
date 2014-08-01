@@ -5,6 +5,7 @@
 CmdLineEdit::CmdLineEdit(QWidget *parent) :
     QLineEdit(parent)
 {
+    setFocusPolicy(Qt::ClickFocus);
 }
 
 void CmdLineEdit::keyReleaseEvent(QKeyEvent *ev)
@@ -13,9 +14,12 @@ void CmdLineEdit::keyReleaseEvent(QKeyEvent *ev)
     // ignore key 0~9
     if (key >= Qt::Key_0 && key <= Qt::Key_9) {
 
+    } else if (key = Qt::Key_Escape) {
+        //
     } else {
         QLineEdit::keyReleaseEvent(ev);
     }
+
 }
 
 void CmdLineEdit::keyPressEvent(QKeyEvent *ev)
@@ -26,4 +30,10 @@ void CmdLineEdit::keyPressEvent(QKeyEvent *ev)
     } else {
         QLineEdit::keyPressEvent(ev);
     }
+}
+
+void CmdLineEdit::focusInEvent(QFocusEvent *ev)
+{
+    emit focusIn();
+    QLineEdit::focusInEvent(ev);
 }

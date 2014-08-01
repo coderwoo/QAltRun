@@ -26,11 +26,10 @@ public slots:
     void show();
 
 protected slots:
-    void commandUpdate(QString str);
-    void commandSelect(int key);
+    void resetTimer();
 
 protected:
-    void resetTimer();
+    void keyPressEvent(QKeyEvent *ev);
 };
 
 #endif // RUNDLG_H
