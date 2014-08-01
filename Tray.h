@@ -6,6 +6,8 @@
 #include <QAction>
 #include <QMenu>
 
+#include "3rdparty/qxtglobalshortcut.h"
+
 class Tray : public QSystemTrayIcon
 {
     Q_OBJECT
@@ -13,6 +15,7 @@ public:
     explicit Tray(QObject *parent = 0);
 
 private:
+    QxtGlobalShortcut* shortcut;
     QMenu * menu;
 
     QAction * exitAction;
