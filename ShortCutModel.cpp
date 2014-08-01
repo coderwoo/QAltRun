@@ -145,6 +145,8 @@ bool ShortCutModel::loadItems(const QString& filePath)
             continue;
         PItem pItem = new Item(list[0].trimmed(), list[1].trimmed(),
                 list[2].trimmed(), list[3].trimmed(), list[4].trimmed());
+        if (pItem->cmd.contains(":\\") && pItem->cmd.contains(" "))
+            pItem->cmd = "\"" + pItem->cmd + "\"";
         m_pItems.push_back(pItem);
     }
     return true;
