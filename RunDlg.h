@@ -19,14 +19,14 @@ private:
     CmdLineEdit     *m_pLineEdit;
     TableView       *m_pTable;
     ShortCutModel   *m_pModel;
-    QTimer          *m_pTimer;
+//    QTimer          *m_pTimer;
     int              m_nCount;
 
 public slots:
     void show();
 
 protected slots:
-    void resetTimer();
+//    void resetTimer();
 
 protected:
     void keyPressEvent(QKeyEvent *ev);

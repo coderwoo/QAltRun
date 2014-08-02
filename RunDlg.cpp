@@ -24,38 +24,39 @@ RunDlg::RunDlg(QWidget *parent) :
     layout->addWidget(m_pTable);
     setLayout(layout);
 
-    m_pTimer = new QTimer(this);
-
-    connect(m_pTimer, SIGNAL(timeout()),
-            this, SLOT(hide()));
-
-    connect(m_pLineEdit, SIGNAL(textChanged(QString)),
-            this, SLOT(resetTimer()));
-
     connect(m_pLineEdit, SIGNAL(commandSelect(int)),
             m_pModel, SLOT(shortCutSelect(int)));
 
     connect(m_pLineEdit, SIGNAL(commandSelect(int)),
             this, SLOT(hide()));
 
-    connect(m_pTable, SIGNAL(clicked(QModelIndex)),
-            this, SLOT(resetTimer()));
-
     connect(m_pLineEdit, SIGNAL(textChanged(QString)),
             m_pModel, SLOT(updateCmd(QString)));
 
     m_pModel->updateCmd(QString());
+
+    //    m_pTimer = new QTimer(this);
+
+    //    connect(m_pTimer, SIGNAL(timeout()),
+    //            this, SLOT(hide()));
+
+    //    connect(m_pLineEdit, SIGNAL(textChanged(QString)),
+    //            this, SLOT(resetTimer()));
+
+    //    connect(m_pTable, SIGNAL(clicked(QModelIndex)),
+    //            this, SLOT(resetTimer()));
+
 }
 
-void RunDlg::resetTimer()
-{
-    m_pTimer->stop();
-    m_pTimer->start(5000);
-}
+//void RunDlg::resetTimer()
+//{
+//    m_pTimer->stop();
+//    m_pTimer->start(5000);
+//}
 
 void RunDlg::show()
 {
-    resetTimer();
+//    resetTimer();
     m_pLineEdit->setFocus();
     QDialog::show();
 }

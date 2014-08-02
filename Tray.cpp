@@ -18,8 +18,8 @@ Tray::Tray(QObject *parent) :
     connect ( this,SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
               this,SLOT(activatedSlot(QSystemTrayIcon::ActivationReason)) );
 
-    shortcut = new QxtGlobalShortcut(QKeySequence("Alt+t"), this);
-    QObject::connect(shortcut, SIGNAL(activated()),this, SLOT(showDlgSlot()));
+ //   shortcut = new QxtGlobalShortcut(QKeySequence("Alt+t"), this);
+ //   QObject::connect(shortcut, SIGNAL(activated()),this, SLOT(showDlgSlot()));
 }
 
 void Tray::createContextMenu ()
